@@ -13,18 +13,19 @@ shader_parameter/blur = 0.0
 
 [node name="scrolling layer" type="CanvasLayer" unique_id=1825293389]
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=163588751]
+[node name="left" type="ColorRect" parent="." unique_id=163588751]
 material = SubResource("ShaderMaterial_g4v7s")
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 32.0
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1419734459]
+[node name="right" type="ColorRect" parent="." unique_id=1419734459]
 material = SubResource("ShaderMaterial_g4v7s")
-layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 192.0
 offset_right = 224.0
 grow_vertical = 2
+mouse_filter = 2

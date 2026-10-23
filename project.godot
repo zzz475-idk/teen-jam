@@ -20,6 +20,7 @@ boot_splash/show_image=false
 [autoload]
 
 ScrollingLayer="*uid://cmd4ntm7fkseu"
+Transition="*uid://dqt2q8oytyv6h"
 
 [display]
 
