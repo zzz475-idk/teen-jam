@@ -11,7 +11,7 @@ var can_jump: bool = true;
 
 func _ready() -> void:
 	can_move = false;
-	await(get_tree().create_timer(2.5).timeout);
+	await(get_tree().create_timer(2.25).timeout);
 	can_move = true;
 
 func _physics_process(delta: float) -> void:
