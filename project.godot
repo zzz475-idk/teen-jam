@@ -1,0 +1,46 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="the jame gam game jam"
+config/description="a game made for the https://itch.io/jam/jame-gam-game-jam"
+config/version="0.5.1"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=60
+boot_splash/show_image=false
+
+[display]
+
+window/size/viewport_width=224
+window/size/viewport_height=144
+window/size/borderless=true
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://music/": "purple",
+"res://scenes/": "red",
+"res://scripts/": "teal",
+"res://shaders/": "yellow",
+"res://sounds/": "pink",
+"res://sprites/": "orange"
+}
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
