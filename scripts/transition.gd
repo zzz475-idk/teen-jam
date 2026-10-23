@@ -6,6 +6,7 @@ extends CanvasLayer
 const MAIN_MENU = preload("uid://cchdtcbqk4g67");
 const MAP_1 = preload("uid://b6251dnxi47nn");
 const MAP_2 = preload("uid://bqicsvyt1jyfi");
+const MAP_3 = preload("uid://douu8wiqx2leo");
 
 
 func transition(scene: PackedScene) -> void:

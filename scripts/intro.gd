@@ -8,7 +8,7 @@ func _ready() -> void:
 	await(get_tree().create_timer(4).timeout);
 	label.text = "protect the little";
 	animation_player.play("intro")
-	await(get_tree().create_timer(4).timeout);
+	await(get_tree().create_timer(2.5).timeout);
 	label.text = "get ready!";
 	animation_player.play("intro")
 	await(get_tree().create_timer(2).timeout);
