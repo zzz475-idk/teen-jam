@@ -23,7 +23,7 @@ shader_parameter/offset = Vector2(4, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oa1go"]
 shader = ExtResource("5_tbmy8")
-shader_parameter/jitter_strength = 0.50000002375
+shader_parameter/jitter_strength = 0.10000000475
 shader_parameter/jitter_speed = 1.00000004424012
 shader_parameter/jitter_frequency = 12.0
 shader_parameter/separate_xy = true
@@ -56,7 +56,7 @@ font_color = Color(1, 0.9529412, 0.9529412, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tbmy8"]
 shader = ExtResource("5_tbmy8")
-shader_parameter/jitter_strength = 0.50000002375
+shader_parameter/jitter_strength = 0.10000000475
 shader_parameter/jitter_speed = 1.00000004424012
 shader_parameter/jitter_frequency = 12.0
 shader_parameter/separate_xy = true
@@ -120,7 +120,7 @@ offset_left = 88.0
 offset_top = 64.0
 offset_right = 136.0
 offset_bottom = 90.0
-text = "vvsd"
+text = "lgid"
 label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
 vertical_alignment = 1
