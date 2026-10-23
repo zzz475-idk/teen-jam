@@ -82,7 +82,6 @@ func jumping(delta: float) -> void:
 func death() -> void:
 	if (dead == false):
 		dead = true;
-		camera_2d.process_mode = Node.PROCESS_MODE_DISABLED;
 		
 		var tween: Tween = create_tween();
 		tween.set_ease(Tween.EASE_IN_OUT);
@@ -94,7 +93,11 @@ func death() -> void:
 		
 		tween.tween_property(self, "position", Vector2(position.x ,position.y + 75), 2);
 		tween2.tween_property(animation, "rotation_degrees", 1028, 2);
-		await(get_tree().create_timer(1).timeout);
+		
+		
+		await(get_tree().create_timer(0.5).timeout);
+		camera_2d.process_mode = Node.PROCESS_MODE_DISABLED;
+		await(get_tree().create_timer(0.5).timeout);
 		Transition.reload();
 
 
