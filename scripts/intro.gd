@@ -1,7 +1,8 @@
 extends CanvasLayer
 
 @onready var label: Label = $Label;
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player: AnimationPlayer = $AnimationPlayer;
+@onready var sound: AudioStreamPlayer2D = $sound;
 
 func _ready() -> void:
 	await(get_tree().create_timer(4).timeout);

@@ -94,10 +94,10 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.17254902, 0.17254902, 0.16470589, 1)
 
-[node name="player" parent="." unique_id=1070567530 instance=ExtResource("2_7xies")]
-position = Vector2(5, 9)
-
 [node name="exit" parent="." unique_id=1970883660 instance=ExtResource("4_00lji")]
 position = Vector2(40, 16)
+
+[node name="player" parent="." unique_id=1070567530 instance=ExtResource("2_7xies")]
+position = Vector2(5, 9)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
