@@ -3,9 +3,11 @@ extends CharacterBody2D
 
 @onready var animation: AnimatedSprite2D = $animation;
 @onready var jump_buffer_timer: Timer = $"jump buffer timer";
+@onready var animation_player: AnimationPlayer = $AnimationPlayer;
+@onready var ray_cast_2d: RayCast2D = $RayCast2D;
 @export var speed: float = 8000;
 @export var jump_power: float = 9000;
-@export var falling_speed: float = 500;
+@export var falling_speed: float = 400;
 var can_move: bool = true;
 var can_jump: bool = true;
 
@@ -52,9 +54,25 @@ func falling(delta: float) -> void:
 		can_jump = true;
 		
 func jumping(delta: float) -> void:
+	
+	#variable jumping
+	if (Input.is_action_just_released("ui_up") && velocity.y < 0):
+		velocity.y = -10
+	
+	#non lineral jumping
+	if (velocity.y > 0):
+		falling_speed = 450;
+	else:
+		falling_speed = 400;
+	
+	#jump earilier
+	if (ray_cast_2d.is_colliding()):
+		can_jump = true;
+	
 	if (Input.is_action_just_pressed("ui_up")):
 		if (can_jump == true):
 			velocity.y = (-jump_power) * delta;
+			animation_player.play("jump");
 
 
 func _on_jump_buffer_timer_timeout() -> void:

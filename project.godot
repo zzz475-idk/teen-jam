@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.7", "GL Compatibility")
 run/max_fps=60
 boot_splash/bg_color=Color(0.17254902, 0.17254902, 0.16470589, 1)
 boot_splash/show_image=false
+boot_splash/use_filter=false
 
 [autoload]
 
@@ -28,7 +29,6 @@ Transition="*uid://dqt2q8oytyv6h"
 
 window/size/viewport_width=224
 window/size/viewport_height=144
-window/size/borderless=true
 window/stretch/mode="canvas_items"
 
 [file_customization]

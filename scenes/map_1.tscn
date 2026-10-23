@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://b6251dnxi47nn"]
 
 [ext_resource type="Texture2D" uid="uid://bfasdjskb6560" path="res://sprites/tileset.png" id="1_87ub3"]
-[ext_resource type="Script" uid="uid://vlgar1ex6yvm" path="res://scripts/map_1.gd" id="2_00lji"]
 [ext_resource type="PackedScene" uid="uid://do8d8ctxfyora" path="res://scenes/player.tscn" id="2_7xies"]
+[ext_resource type="Script" uid="uid://b00uvrepow5bh" path="res://scripts/exit.gd" id="4_0dnla"]
 [ext_resource type="PackedScene" uid="uid://dgu61lyyq8qqk" path="res://scenes/exit.tscn" id="4_00lji"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xies"]
@@ -77,7 +77,6 @@ sources/0 = SubResource("TileSetAtlasSource_7xies")
 [node name="map1" type="TileMapLayer" unique_id=553868582]
 tile_map_data = PackedByteArray("AAD+/wIAAAAAAAYAAAD//wIAAAABAAYAAAAAAAIAAAAAAAYAAAABAAIAAAABAAYAAAACAAIAAAACAAYAAAD9/wEAAAAEAAYAAAD9/wIAAAACAAcAAAD9/wAAAAAEAAYAAAD9////AAAEAAYAAAD9//7/AAAEAAYAAAD+//3/AAAEAAYAAFD///3/AAAEAAYAAFAAAP3/AAAEAAYAAFABAP3/AAAEAAYAAFACAP3/AAAEAAYAAFADAP7/AAAEAAYAADADAP//AAAEAAYAADADAAAAAAAEAAYAADADAAEAAAAEAAYAADA=")
 tile_set = SubResource("TileSet_g4v7s")
-script = ExtResource("2_00lji")
 
 [node name="background" type="ColorRect" parent="." unique_id=603984213]
 show_behind_parent = true
@@ -96,8 +95,10 @@ color = Color(0.17254902, 0.17254902, 0.16470589, 1)
 
 [node name="exit" parent="." unique_id=1970883660 instance=ExtResource("4_00lji")]
 position = Vector2(40, 16)
+script = ExtResource("4_0dnla")
 
 [node name="player" parent="." unique_id=1070567530 instance=ExtResource("2_7xies")]
 position = Vector2(5, 9)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_entered" from="exit" to="exit" method="_on_body_entered"]
