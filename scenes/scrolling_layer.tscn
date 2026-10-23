@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cmd4ntm7fkseu"]
+
+[ext_resource type="Shader" uid="uid://b1nmt6lxp6vmx" path="res://shaders/scrolling.gdshader" id="1_4dx7c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
+shader = ExtResource("1_4dx7c")
+shader_parameter/color_one = Color(0.627451, 0.4862745, 1, 1)
+shader_parameter/color_two = Color(0.17254902, 0.17254902, 0.16470589, 1)
+shader_parameter/angle = 25.0
+shader_parameter/line_count = 40.0
+shader_parameter/speed = 2.0
+shader_parameter/blur = 0.0
+
+[node name="scrolling layer" type="CanvasLayer" unique_id=1825293389]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=163588751]
+material = SubResource("ShaderMaterial_g4v7s")
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 32.0
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect" unique_id=1419734459]
+material = SubResource("ShaderMaterial_g4v7s")
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_right = 224.0
+grow_vertical = 2
