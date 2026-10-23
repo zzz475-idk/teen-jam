@@ -153,9 +153,6 @@ offset_bottom = 62.0
 texture = ExtResource("2_lk7cf")
 stretch_mode = 1
 
-[node name="player" parent="." unique_id=1070567530 instance=ExtResource("3_lk7cf")]
-position = Vector2(-20, -21)
-
 [node name="borders" type="Node2D" parent="." unique_id=1890992281]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="borders" unique_id=149688618]
@@ -179,5 +176,8 @@ shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="exit" parent="." unique_id=1970883660 instance=ExtResource("7_rutqx")]
 position = Vector2(293, 1)
+
+[node name="player" parent="." unique_id=1070567530 instance=ExtResource("3_lk7cf")]
+position = Vector2(-20, -21)
 
 [connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
