@@ -5,15 +5,17 @@ extends CharacterBody2D
 @onready var jump_buffer_timer: Timer = $"jump buffer timer";
 @onready var animation_player: AnimationPlayer = $AnimationPlayer;
 @onready var ray_cast_2d: RayCast2D = $RayCast2D;
+@onready var camera_2d: Camera2D = $Camera2D;
 @export var speed: float = 8000;
 @export var jump_power: float = 9000;
 @export var falling_speed: float = 400;
 var can_move: bool = true;
 var can_jump: bool = true;
+var dead: bool = false;
 
 func _ready() -> void:
 	can_move = false;
-	await(get_tree().create_timer(2.25).timeout);
+	await(get_tree().create_timer(2).timeout);
 	can_move = true;
 
 func _physics_process(delta: float) -> void:
@@ -35,15 +37,18 @@ func movement(delta: float) -> void:
 
 func animateing() -> void:
 	
-	if (velocity.x > 0):
-		animation.play("walk");
-		animation.flip_h = false;
-	if (velocity.x < 0):
-		animation.play("walk");
-		animation.flip_h = true;
-	
-	if (velocity == Vector2.ZERO):
-		animation.play("idle");
+	if (dead == false):
+		if (velocity.x > 0):
+			animation.play("walk");
+			animation.flip_h = false;
+		if (velocity.x < 0):
+			animation.play("walk");
+			animation.flip_h = true;
+		
+		if (velocity == Vector2.ZERO):
+			animation.play("idle");
+	else:
+		animation.play("death");
 
 func falling(delta: float) -> void:
 	if !(is_on_floor()):
@@ -73,6 +78,24 @@ func jumping(delta: float) -> void:
 		if (can_jump == true):
 			velocity.y = (-jump_power) * delta;
 			animation_player.play("jump");
+
+func death() -> void:
+	if (dead == false):
+		dead = true;
+		camera_2d.process_mode = Node.PROCESS_MODE_DISABLED;
+		
+		var tween: Tween = create_tween();
+		tween.set_ease(Tween.EASE_IN_OUT);
+		tween.set_trans(Tween.TRANS_BACK);
+		
+		var tween2: Tween = create_tween();
+		tween2.set_ease(Tween.EASE_IN_OUT);
+		tween2.set_trans(Tween.TRANS_BACK);
+		
+		tween.tween_property(self, "position", Vector2(position.x ,position.y + 75), 2);
+		tween2.tween_property(animation, "rotation_degrees", 1028, 2);
+		await(get_tree().create_timer(1).timeout);
+		Transition.reload();
 
 
 func _on_jump_buffer_timer_timeout() -> void:
