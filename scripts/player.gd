@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer;
 @onready var ray_cast_2d: RayCast2D = $RayCast2D;
 @onready var camera_2d: Camera2D = $Camera2D;
+@onready var hp_amount: Label = $"ui/hearth/hp amount";
 @export var speed: float = 8000;
 @export var jump_power: float = 9000;
 @export var falling_speed: float = 400;
@@ -23,6 +24,8 @@ func _physics_process(delta: float) -> void:
 	animateing();
 	falling(delta);
 	jumping(delta);
+	
+	hp_amount.text = str(GlobalVariables.hp) + 'x';
 	
 func movement(delta: float) -> void:
 	move_and_slide();
@@ -62,7 +65,7 @@ func jumping(delta: float) -> void:
 	
 	#variable jumping
 	if (Input.is_action_just_released("ui_up") && velocity.y < 0):
-		velocity.y = -10
+		velocity.y = -10 * delta
 	
 	#non lineral jumping
 	if (velocity.y > 0):
@@ -99,6 +102,8 @@ func death() -> void:
 		camera_2d.process_mode = Node.PROCESS_MODE_DISABLED;
 		await(get_tree().create_timer(0.5).timeout);
 		Transition.reload();
+		await(get_tree().create_timer(0.2).timeout);
+		GlobalVariables.hp -= 1;
 
 
 func _on_jump_buffer_timer_timeout() -> void:

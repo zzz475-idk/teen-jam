@@ -10,3 +10,4 @@ func _on_spikes_area_body_entered(body: Node2D) -> void:
 func _on_exit_body_entered(body: Node2D) -> void:
 	if (body == player):
 		Transition.transition(Transition.MAP_3);
+		player.can_move = false;

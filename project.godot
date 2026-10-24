@@ -24,11 +24,13 @@ boot_splash/use_filter=false
 
 ScrollingLayer="*uid://cmd4ntm7fkseu"
 Transition="*uid://dqt2q8oytyv6h"
+GlobalVariables="*uid://cy8lp4f7c4oct"
 
 [display]
 
 window/size/viewport_width=224
 window/size/viewport_height=144
+window/size/borderless=true
 window/stretch/mode="canvas_items"
 
 [file_customization]

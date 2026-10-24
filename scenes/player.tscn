@@ -19,6 +19,12 @@
 [ext_resource type="Texture2D" uid="uid://cqvw4hq63wbk" path="res://sprites/player/walk/player walk6.png" id="14_i4ail"]
 [ext_resource type="Texture2D" uid="uid://hi4gghqarbqy" path="res://sprites/player/walk/player walk7.png" id="15_a38lo"]
 [ext_resource type="Texture2D" uid="uid://hche1fphcoqr" path="res://sprites/player/walk/player walk8.png" id="16_4ni07"]
+[ext_resource type="Texture2D" uid="uid://cgkstfwtprbev" path="res://sprites/player/hearth/player hearth1.png" id="20_4ni07"]
+[ext_resource type="Texture2D" uid="uid://pg6yljy3ykos" path="res://sprites/player/hearth/player hearth2.png" id="21_l71n6"]
+[ext_resource type="Texture2D" uid="uid://d0sfvs605x113" path="res://sprites/player/hearth/player hearth3.png" id="22_ke2ow"]
+[ext_resource type="Texture2D" uid="uid://bq2tslgf0g5pr" path="res://sprites/player/hearth/player hearth4.png" id="23_ujl30"]
+[ext_resource type="Shader" uid="uid://2e2xv3ygb6wm" path="res://shaders/text.gdshader" id="24_ke2ow"]
+[ext_resource type="FontFile" uid="uid://ba2s46rel4apw" path="res://monogram.ttf" id="24_l71n6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -144,6 +150,57 @@ _data = {
 &"jump": SubResource("Animation_fulsm")
 }
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_yf5fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_4ni07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_l71n6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ke2ow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ujl30")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ujl30"]
+shader = ExtResource("24_ke2ow")
+shader_parameter/jitter_strength = 2.0
+shader_parameter/jitter_speed = 0.10000000149012
+shader_parameter/jitter_frequency = 12.0
+shader_parameter/separate_xy = true
+shader_parameter/time_offset = 0.0
+shader_parameter/enable_rotation = false
+shader_parameter/rotation_strength = 5.0
+shader_parameter/rotation_speed = 3.0
+shader_parameter/rotation_frequency = 4.0
+shader_parameter/enable_scaling = false
+shader_parameter/scale_strength = 0.1
+shader_parameter/scale_speed = 2.5
+shader_parameter/scale_frequency = 6.0
+shader_parameter/base_scale = 1.0
+shader_parameter/text_color = Color(1, 0.9529412, 0.9529412, 1)
+shader_parameter/use_custom_color = true
+shader_parameter/shake_intensity = 0.5
+shader_parameter/enable_pixelation = true
+shader_parameter/pixel_size = 1.0
+shader_parameter/adaptive_pixels = true
+shader_parameter/enable_outline = true
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_thickness = 1.0
+shader_parameter/chromatic_aberration = false
+shader_parameter/aberration_strength = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("24_l71n6")
+
 [node name="player" type="CharacterBody2D" unique_id=1070567530]
 script = ExtResource("1_qfm1y")
 
@@ -151,7 +208,7 @@ script = ExtResource("1_qfm1y")
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"death"
-frame_progress = 0.15162827
+frame_progress = 0.14921393
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2111783949]
@@ -176,6 +233,24 @@ one_shot = true
 libraries/ = SubResource("AnimationLibrary_4r5pv")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=896872917]
-target_position = Vector2(0, 15)
+target_position = Vector2(0, 16)
+
+[node name="ui" type="CanvasLayer" parent="." unique_id=1502294195]
+layer = 0
+
+[node name="hearth" type="AnimatedSprite2D" parent="ui" unique_id=1025178295]
+position = Vector2(104, 138)
+sprite_frames = SubResource("SpriteFrames_yf5fn")
+autoplay = "default"
+frame_progress = 0.9820548
+
+[node name="hp amount" type="Label" parent="ui/hearth" unique_id=548588387]
+material = SubResource("ShaderMaterial_ujl30")
+offset_left = 7.0
+offset_top = -7.0
+offset_right = 19.0
+offset_bottom = 6.0
+text = "9x"
+label_settings = SubResource("LabelSettings_g4v7s")
 
 [connection signal="timeout" from="jump buffer timer" to="." method="_on_jump_buffer_timer_timeout"]
