@@ -102,9 +102,25 @@ func death() -> void:
 		camera_2d.process_mode = Node.PROCESS_MODE_DISABLED;
 		await(get_tree().create_timer(0.5).timeout);
 		Transition.reload();
-		await(get_tree().create_timer(0.2).timeout);
+		await(get_tree().create_timer(0.65).timeout);
 		GlobalVariables.hp -= 1;
 
+func camera_juice(zoom_x: float, zoom_y: float, time: float) -> void:
+	var tween: Tween = create_tween();
+	tween.set_trans(Tween.TRANS_CIRC);
+	tween.set_ease(Tween.EASE_IN);
+	
+	
+	tween.tween_property(camera_2d, "zoom", Vector2(zoom_x, zoom_y), time / 3);
+	
+	await(get_tree().create_timer(time / 3).timeout);
+	
+	var tween2: Tween = create_tween();
+	tween2.set_trans(Tween.TRANS_CIRC);
+	tween2.set_ease(Tween.EASE_IN);
+	
+	tween2.tween_property(camera_2d, "zoom", Vector2(1, 1), time / 3);
+	
 
 func _on_jump_buffer_timer_timeout() -> void:
 	can_jump = false;

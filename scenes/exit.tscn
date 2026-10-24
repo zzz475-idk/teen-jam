@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dgu61lyyq8qqk"]
 
 [ext_resource type="Texture2D" uid="uid://ct6mbswbkjbu0" path="res://sprites/exit.png" id="1_l0aq0"]
+[ext_resource type="Script" uid="uid://b00uvrepow5bh" path="res://scripts/exit.gd" id="1_l5n14"]
+[ext_resource type="Texture2D" uid="uid://5nnh8c72rc0w" path="res://sprites/exit blocker.png" id="3_c7mer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(14, 28)
 
 [node name="exit" type="Area2D" unique_id=1970883660]
+script = ExtResource("1_l5n14")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=829964890]
 position = Vector2(1, 2)
@@ -13,3 +16,10 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=501751956]
 texture = ExtResource("1_l0aq0")
+
+[node name="ExitBlocker" type="Sprite2D" parent="." unique_id=1649679142]
+position = Vector2(1, 0)
+texture = ExtResource("3_c7mer")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1993542492]
+emitting = false

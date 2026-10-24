@@ -107,6 +107,14 @@ func _on_exit_body_entered(body: Node2D) -> void:
 	if (body == player):
 		Transition.transition(Transition.MAP_3);
 		player.can_move = false;
+
+
+func _on_button_pressed() -> void:
+	player.camera_juice(1.1, 1.1, 2);
+	player.can_move = false;
+	player.velocity = Vector2(0, 0);
+	await(get_tree().create_timer(2).timeout);
+	player.can_move = true;
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rutqx"]
@@ -269,6 +277,7 @@ shape = SubResource("RectangleShape2D_vtpsr")
 
 [node name="exit" parent="." unique_id=1970883660 instance=ExtResource("6_nasj0")]
 position = Vector2(260, 1)
+blocked = true
 
 [node name="player" parent="." unique_id=1070567530 instance=ExtResource("7_hcsfy")]
 position = Vector2(-20, -21)
@@ -278,3 +287,4 @@ show_behind_parent = true
 position = Vector2(232, 8)
 
 [connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
