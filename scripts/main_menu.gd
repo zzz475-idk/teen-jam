@@ -10,8 +10,7 @@ func _ready() -> void:
 	MusicPlayer.play();
 
 func _physics_process(delta: float) -> void:
-	star_1.rotation_degrees += 2 * delta;
-	star_2.rotation_degrees += 2 * delta;
+	star_1.rotation_degrees += 6 * delta;
 	
 	if (Input.is_action_just_pressed("x")):
 		if (started == false):

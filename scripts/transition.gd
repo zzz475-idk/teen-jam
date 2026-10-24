@@ -8,6 +8,7 @@ const MAP_1 = preload("uid://b6251dnxi47nn");
 const MAP_2 = preload("uid://bqicsvyt1jyfi");
 const MAP_3 = preload("uid://douu8wiqx2leo");
 const MAP_4 = preload("uid://d1cmyv5hwj2v7");
+const MAP_5 = preload("uid://cnfqy4vlx1ywq");
 
 
 func transition(scene: PackedScene) -> void:

@@ -1,9 +1,24 @@
 [gd_scene format=3 uid="uid://8plf4h71wl3w"]
 
-[ext_resource type="Script" uid="uid://hcjra4sry110" path="res://scripts/intro.gd" id="1_4bx60"]
 [ext_resource type="Shader" uid="uid://dtywr0r48p2gu" path="res://shaders/intro.gdshader" id="1_ioskq"]
 [ext_resource type="FontFile" uid="uid://ba2s46rel4apw" path="res://monogram.ttf" id="2_yjqpq"]
 [ext_resource type="AudioStream" uid="uid://bufubrd8gshj4" path="res://music/intro.ogg" id="4_i2l1n"]
+
+[sub_resource type="GDScript" id="GDScript_4bx60"]
+script/source = "extends CanvasLayer
+
+@onready var label: Label = $Label;
+@onready var animation_player: AnimationPlayer = $AnimationPlayer;
+@onready var sound: AudioStreamPlayer2D = $sound;
+
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
+	await(get_tree().create_timer(5).timeout);
+	label.text = \"guide the little!\";
+	animation_player.play(\"intro\")
+	await(get_tree().create_timer(3).timeout);
+	Transition.transition(Transition.MAIN_MENU);
+"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g4v7s"]
 shader = ExtResource("1_ioskq")
@@ -107,7 +122,7 @@ font = ExtResource("2_yjqpq")
 font_color = Color(1, 0.9529412, 0.9529412, 1)
 
 [node name="intro" type="CanvasLayer" unique_id=547890932]
-script = ExtResource("1_4bx60")
+script = SubResource("GDScript_4bx60")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1887281522]
 material = SubResource("ShaderMaterial_g4v7s")
