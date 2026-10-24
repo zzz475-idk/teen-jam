@@ -92,7 +92,7 @@ func death() -> void:
 		dead = true;
 		
 		dead_player.play();
-		MusicPlayer.volume_db = -7
+		MusicPlayer.volume_db = -2
 		
 		var tween: Tween = create_tween();
 		tween.set_ease(Tween.EASE_IN_OUT);

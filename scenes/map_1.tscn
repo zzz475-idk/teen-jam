@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://do8d8ctxfyora" path="res://scenes/player.tscn" id="2_7xies"]
 [ext_resource type="Texture2D" uid="uid://cbj05r1bitjk4" path="res://sprites/controlls.png" id="4_0dnla"]
 [ext_resource type="PackedScene" uid="uid://dgu61lyyq8qqk" path="res://scenes/exit.tscn" id="4_00lji"]
+[ext_resource type="Shader" uid="uid://2e2xv3ygb6wm" path="res://shaders/text.gdshader" id="6_nfx0i"]
+[ext_resource type="FontFile" uid="uid://ba2s46rel4apw" path="res://monogram.ttf" id="7_gbsvo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xies"]
 texture = ExtResource("1_87ub3")
@@ -83,25 +85,43 @@ texture = ExtResource("1_87ub3")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7xies")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yf5fn"]
+shader = ExtResource("6_nfx0i")
+shader_parameter/jitter_strength = 1.0000000475
+shader_parameter/jitter_speed = 0.10000000149012
+shader_parameter/jitter_frequency = 6.000000281740119
+shader_parameter/separate_xy = true
+shader_parameter/time_offset = 0.0
+shader_parameter/enable_rotation = false
+shader_parameter/rotation_strength = 5.0
+shader_parameter/rotation_speed = 3.0
+shader_parameter/rotation_frequency = 4.0
+shader_parameter/enable_scaling = false
+shader_parameter/scale_strength = 0.1
+shader_parameter/scale_speed = 2.5
+shader_parameter/scale_frequency = 6.0
+shader_parameter/base_scale = 1.0
+shader_parameter/text_color = Color(1, 0.9529412, 0.9529412, 1)
+shader_parameter/use_custom_color = true
+shader_parameter/shake_intensity = 0.5
+shader_parameter/enable_pixelation = true
+shader_parameter/pixel_size = 1.0
+shader_parameter/adaptive_pixels = true
+shader_parameter/enable_outline = true
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/outline_thickness = 1.0
+shader_parameter/chromatic_aberration = false
+shader_parameter/aberration_strength = 1.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("7_gbsvo")
+font_size = 10
+font_color = Color(1, 0.9529412, 0.9529412, 1)
+
 [node name="map1" type="TileMapLayer" unique_id=553868582]
 tile_map_data = PackedByteArray("AAD+/wIAAAAAAAYAAAD//wIAAAABAAYAAAAAAAIAAAAAAAYAAAABAAIAAAABAAYAAAACAAIAAAACAAYAAAD9/wEAAAAEAAYAAAD9/wIAAAACAAcAAAD9/wAAAAAEAAYAAAD9////AAAEAAYAAAD9//7/AAAEAAYAAAD+//3/AAAEAAYAAFD///3/AAAEAAYAAFAAAP3/AAAEAAYAAFABAP3/AAAEAAYAAFACAP3/AAAEAAYAAFADAP7/AAAEAAYAADADAP//AAAEAAYAADADAAAAAAAEAAYAADADAAEAAAAEAAYAADAAAAEAAAALAAYAAAA=")
 tile_set = SubResource("TileSet_g4v7s")
 script = ExtResource("2_0dnla")
-
-[node name="background" type="ColorRect" parent="." unique_id=603984213]
-show_behind_parent = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = -146.0
-offset_right = 160.0
-offset_bottom = 142.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.17254902, 0.17254902, 0.16470589, 1)
 
 [node name="exit" parent="." unique_id=1970883660 instance=ExtResource("4_00lji")]
 position = Vector2(40, 16)
@@ -112,6 +132,17 @@ position = Vector2(5, 9)
 [node name="Controlls" type="Sprite2D" parent="." unique_id=1819727666]
 position = Vector2(-8, -8)
 texture = ExtResource("4_0dnla")
+
+[node name="Label" type="Label" parent="." unique_id=419247736]
+material = SubResource("ShaderMaterial_yf5fn")
+offset_left = 3.0
+offset_top = -22.0
+offset_right = 51.0
+offset_bottom = 1.0
+text = "<- controls"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
 [connection signal="body_entered" from="exit" to="exit" method="_on_body_entered"]
