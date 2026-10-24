@@ -97,6 +97,7 @@ sources/0 = SubResource("TileSetAtlasSource_5kldx")
 script/source = "extends TileMapLayer
 
 @onready var player: CharacterBody2D = $player;
+@onready var exit: Area2D = $exit;
 
 func _on_spikes_area_body_entered(body: Node2D) -> void:
 	if (body == player):
@@ -115,6 +116,7 @@ func _on_button_pressed() -> void:
 	player.velocity = Vector2(0, 0);
 	await(get_tree().create_timer(2).timeout);
 	player.can_move = true;
+	exit.blocked = false;
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rutqx"]
@@ -203,7 +205,7 @@ tile_set = SubResource("TileSet_g4v7s")
 script = SubResource("GDScript_jeisp")
 
 [node name="enviroment" type="TileMapLayer" parent="." unique_id=751454941]
-tile_map_data = PackedByteArray("AAAGAP7/AAAAAAMAAAAGAP//AAAAAAQAAAAGAAAAAAAAAAUAAAAHAP7/AAABAAMAAAAHAP//AAABAAQAAAAHAAAAAAABAAUAAAAIAP7/AAACAAMAAAAIAP//AAACAAQAAAAIAAAAAAACAAUAAAACAP//AAAHAAUAABABAP//AAAIAAUAABAAAP//AAAJAAUAABACAAAAAAAHAAYAABABAAAAAAAIAAYAABAAAAAAAAAJAAYAABD+/wAAAAALAAYAAAAJAAAAAAALAAYAABANAAAAAAALAAYAABAFAP//AAAKAAUAAAAFAAAAAAAKAAYAAAAPAP//AAAKAAUAABAPAAAAAAAKAAYAABA=")
+tile_map_data = PackedByteArray("AAAGAP7/AAAAAAMAAAAGAP//AAAAAAQAAAAGAAAAAAAAAAUAAAAHAP7/AAABAAMAAAAHAP//AAABAAQAAAAHAAAAAAABAAUAAAAIAP7/AAACAAMAAAAIAP//AAACAAQAAAAIAAAAAAACAAUAAAACAP//AAAHAAUAABABAP//AAAIAAUAABAAAP//AAAJAAUAABACAAAAAAAHAAYAABABAAAAAAAIAAYAABAAAAAAAAAJAAYAABD+/wAAAAALAAYAAAAJAAAAAAALAAYAABANAAAAAAALAAYAABAFAP//AAAKAAUAAAAFAAAAAAAKAAYAAAAPAP//AAAKAAUAABAPAAAAAAAKAAYAABAJAP7/AAADAAMAAAAJAP//AAADAAQAAAA=")
 tile_set = SubResource("TileSet_yf5fn")
 
 [node name="black" type="ColorRect" parent="." unique_id=809160809]

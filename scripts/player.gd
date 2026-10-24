@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D;
 @onready var camera_2d: Camera2D = $Camera2D;
 @onready var hp_amount: Label = $"ui/hearth/hp amount";
+@onready var meow_player: AudioStreamPlayer2D = $"meow player";
 @export var speed: float = 8000;
 @export var jump_power: float = 9000;
 @export var falling_speed: float = 400;
@@ -26,6 +27,8 @@ func _physics_process(delta: float) -> void:
 	jumping(delta);
 	
 	hp_amount.text = str(GlobalVariables.hp) + 'x';
+	if (Input.is_action_just_pressed("x")):
+		meow_player.play();
 	
 func movement(delta: float) -> void:
 	move_and_slide();
@@ -93,10 +96,9 @@ func death() -> void:
 		var tween2: Tween = create_tween();
 		tween2.set_ease(Tween.EASE_IN_OUT);
 		tween2.set_trans(Tween.TRANS_BACK);
-		
+
 		tween.tween_property(self, "position", Vector2(position.x ,position.y + 75), 2);
 		tween2.tween_property(animation, "rotation_degrees", 1028, 2);
-		
 		
 		await(get_tree().create_timer(0.5).timeout);
 		camera_2d.process_mode = Node.PROCESS_MODE_DISABLED;

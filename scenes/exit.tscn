@@ -20,6 +20,3 @@ texture = ExtResource("1_l0aq0")
 [node name="ExitBlocker" type="Sprite2D" parent="." unique_id=1649679142]
 position = Vector2(1, 0)
 texture = ExtResource("3_c7mer")
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1993542492]
-emitting = false

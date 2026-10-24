@@ -5,11 +5,9 @@ extends CanvasLayer
 @onready var sound: AudioStreamPlayer2D = $sound;
 
 func _ready() -> void:
-	await(get_tree().create_timer(4).timeout);
-	label.text = "protect the little";
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
+	await(get_tree().create_timer(5).timeout);
+	label.text = "guide the little guy!";
 	animation_player.play("intro")
 	await(get_tree().create_timer(2.5).timeout);
-	label.text = "get ready!";
-	animation_player.play("intro")
-	await(get_tree().create_timer(2).timeout);
 	Transition.transition(Transition.MAIN_MENU);

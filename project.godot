@@ -25,6 +25,7 @@ boot_splash/use_filter=false
 ScrollingLayer="*uid://cmd4ntm7fkseu"
 Transition="*uid://dqt2q8oytyv6h"
 GlobalVariables="*uid://cy8lp4f7c4oct"
+MusicPlayer="*uid://crulon7xi1ba4"
 
 [display]
 

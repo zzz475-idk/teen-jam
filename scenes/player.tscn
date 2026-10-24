@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://bq2tslgf0g5pr" path="res://sprites/player/hearth/player hearth4.png" id="23_ujl30"]
 [ext_resource type="Shader" uid="uid://2e2xv3ygb6wm" path="res://shaders/text.gdshader" id="24_ke2ow"]
 [ext_resource type="FontFile" uid="uid://ba2s46rel4apw" path="res://monogram.ttf" id="24_l71n6"]
+[ext_resource type="AudioStream" uid="uid://cuodmquwwn8k0" path="res://sounds/meow.wav" id="26_ujl30"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -208,7 +209,7 @@ script = ExtResource("1_qfm1y")
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"death"
-frame_progress = 0.6788137
+frame_progress = 0.2912899
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2111783949]
@@ -238,11 +239,25 @@ target_position = Vector2(0, 16)
 [node name="ui" type="CanvasLayer" parent="." unique_id=1502294195]
 layer = 0
 
+[node name="ColorRect2" type="ColorRect" parent="ui" unique_id=520204109]
+offset_left = 89.0
+offset_top = 132.0
+offset_right = 129.0
+offset_bottom = 144.0
+color = Color(1, 0.9529412, 0.9529412, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ui" unique_id=67250729]
+offset_left = 90.0
+offset_top = 133.0
+offset_right = 128.0
+offset_bottom = 144.0
+color = Color(0.17254902, 0.17254902, 0.16470589, 1)
+
 [node name="hearth" type="AnimatedSprite2D" parent="ui" unique_id=1025178295]
 position = Vector2(104, 138)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 autoplay = "default"
-frame_progress = 0.27657464
+frame_progress = 0.19559348
 
 [node name="hp amount" type="Label" parent="ui/hearth" unique_id=548588387]
 material = SubResource("ShaderMaterial_ujl30")
@@ -252,5 +267,10 @@ offset_right = 19.0
 offset_bottom = 6.0
 text = "9x"
 label_settings = SubResource("LabelSettings_g4v7s")
+
+[node name="meow player" type="AudioStreamPlayer2D" parent="." unique_id=317320188]
+stream = ExtResource("26_ujl30")
+volume_db = 3.0
+max_distance = 4096.0
 
 [connection signal="timeout" from="jump buffer timer" to="." method="_on_jump_buffer_timer_timeout"]

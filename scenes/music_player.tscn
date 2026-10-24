@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://crulon7xi1ba4"]
+
+[ext_resource type="AudioStream" uid="uid://cw71ncs8oue83" path="res://music/bad.ogg" id="1_jxdhu"]
+
+[node name="music player" type="AudioStreamPlayer2D" unique_id=1340043283]
+stream = ExtResource("1_jxdhu")
+volume_db = 3.0
+max_distance = 4096.0
+parameters/looping = true

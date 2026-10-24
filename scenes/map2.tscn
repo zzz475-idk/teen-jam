@@ -189,7 +189,7 @@ color = Color(0.17254902, 0.17254902, 0.16470589, 1)
 
 [node name="white" type="ColorRect" parent="." unique_id=1995116631]
 show_behind_parent = true
-offset_left = -159.5
+offset_left = -193.0
 offset_top = 28.0
 offset_right = 483.5
 offset_bottom = 103.0
@@ -202,7 +202,7 @@ scroll_offset = Vector2(1, -20)
 
 [node name="background" type="TextureRect" parent="background2" unique_id=20824744]
 material = SubResource("ShaderMaterial_rutqx")
-offset_left = -157.0
+offset_left = -194.0
 offset_top = -83.0
 offset_right = 483.0
 offset_bottom = 61.0
@@ -216,7 +216,7 @@ scroll_offset = Vector2(1.5, -20)
 
 [node name="background" type="TextureRect" parent="background1" unique_id=842725621]
 material = SubResource("ShaderMaterial_ccs1r")
-offset_left = -158.5
+offset_left = -194.5
 offset_top = -82.0
 offset_right = 481.5
 offset_bottom = 62.0
