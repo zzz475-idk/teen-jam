@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://c836ogmfvj7eq" path="res://sprites/main menu/star1.png" id="5_8ln24"]
 [ext_resource type="Shader" uid="uid://2e2xv3ygb6wm" path="res://shaders/text.gdshader" id="5_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://cgwikn873n6lr" path="res://sprites/main menu/star2.png" id="7_tbmy8"]
-[ext_resource type="AudioStream" uid="uid://unfdrpdu8q8n" path="res://music/menu.ogg" id="9_jk1qb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_l6cm7"]
 shader = ExtResource("1_ekxnf")
@@ -146,9 +145,3 @@ texture = ExtResource("5_8ln24")
 [node name="star2" type="Sprite2D" parent="star" unique_id=1888472190]
 position = Vector2(112, 48)
 texture = ExtResource("7_tbmy8")
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=176134707]
-stream = ExtResource("9_jk1qb")
-volume_db = -2.0
-max_distance = 4096.0
-parameters/looping = true

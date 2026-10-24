@@ -9,5 +9,5 @@ func _ready() -> void:
 	await(get_tree().create_timer(5).timeout);
 	label.text = "guide the little guy!";
 	animation_player.play("intro")
-	await(get_tree().create_timer(2.5).timeout);
+	await(get_tree().create_timer(3).timeout);
 	Transition.transition(Transition.MAIN_MENU);

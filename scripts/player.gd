@@ -8,6 +8,7 @@ extends CharacterBody2D
 @onready var camera_2d: Camera2D = $Camera2D;
 @onready var hp_amount: Label = $"ui/hearth/hp amount";
 @onready var meow_player: AudioStreamPlayer2D = $"meow player";
+@onready var dead_player: AudioStreamPlayer2D = $"dead player";
 @export var speed: float = 8000;
 @export var jump_power: float = 9000;
 @export var falling_speed: float = 400;
@@ -16,6 +17,7 @@ var can_jump: bool = true;
 var dead: bool = false;
 
 func _ready() -> void:
+	MusicPlayer.volume_db = 0;
 	can_move = false;
 	await(get_tree().create_timer(2).timeout);
 	can_move = true;
@@ -88,6 +90,9 @@ func jumping(delta: float) -> void:
 func death() -> void:
 	if (dead == false):
 		dead = true;
+		
+		dead_player.play();
+		MusicPlayer.volume_db = -7
 		
 		var tween: Tween = create_tween();
 		tween.set_ease(Tween.EASE_IN_OUT);

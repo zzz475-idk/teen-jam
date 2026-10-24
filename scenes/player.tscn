@@ -26,6 +26,7 @@
 [ext_resource type="Shader" uid="uid://2e2xv3ygb6wm" path="res://shaders/text.gdshader" id="24_ke2ow"]
 [ext_resource type="FontFile" uid="uid://ba2s46rel4apw" path="res://monogram.ttf" id="24_l71n6"]
 [ext_resource type="AudioStream" uid="uid://cuodmquwwn8k0" path="res://sounds/meow.wav" id="26_ujl30"]
+[ext_resource type="AudioStream" uid="uid://di61dyfcmooto" path="res://sounds/dead.wav" id="27_31cv2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -209,7 +210,7 @@ script = ExtResource("1_qfm1y")
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"death"
-frame_progress = 0.2912899
+frame_progress = 0.0033825715
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2111783949]
@@ -257,7 +258,7 @@ color = Color(0.17254902, 0.17254902, 0.16470589, 1)
 position = Vector2(104, 138)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 autoplay = "default"
-frame_progress = 0.19559348
+frame_progress = 0.2637896
 
 [node name="hp amount" type="Label" parent="ui/hearth" unique_id=548588387]
 material = SubResource("ShaderMaterial_ujl30")
@@ -271,6 +272,10 @@ label_settings = SubResource("LabelSettings_g4v7s")
 [node name="meow player" type="AudioStreamPlayer2D" parent="." unique_id=317320188]
 stream = ExtResource("26_ujl30")
 volume_db = 3.0
+max_distance = 4096.0
+
+[node name="dead player" type="AudioStreamPlayer2D" parent="." unique_id=1332209630]
+stream = ExtResource("27_31cv2")
 max_distance = 4096.0
 
 [connection signal="timeout" from="jump buffer timer" to="." method="_on_jump_buffer_timer_timeout"]

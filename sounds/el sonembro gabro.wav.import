@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bprdxoepb4qxo"
+path="res://.godot/imported/el sonembro gabro.wav-1ad8b726aa59b43d52b95de810d5995f.sample"
+
+[deps]
+
+source_file="res://sounds/el sonembro gabro.wav"
+dest_files=["res://.godot/imported/el sonembro gabro.wav-1ad8b726aa59b43d52b95de810d5995f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

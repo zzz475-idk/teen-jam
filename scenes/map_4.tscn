@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dgu61lyyq8qqk" path="res://scenes/exit.tscn" id="6_nasj0"]
 [ext_resource type="PackedScene" uid="uid://do8d8ctxfyora" path="res://scenes/player.tscn" id="7_hcsfy"]
 [ext_resource type="PackedScene" uid="uid://b82m8d870j342" path="res://scenes/button.tscn" id="7_o37r7"]
+[ext_resource type="AudioStream" uid="uid://bprdxoepb4qxo" path="res://sounds/el sonembro gabro.wav" id="8_mpexw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kldx"]
 texture = ExtResource("1_o37r7")
@@ -98,6 +99,7 @@ script/source = "extends TileMapLayer
 
 @onready var player: CharacterBody2D = $player;
 @onready var exit: Area2D = $exit;
+@onready var hagdnadfsa_player: AudioStreamPlayer2D = $\"hagdnadfsa player\";
 
 func _on_spikes_area_body_entered(body: Node2D) -> void:
 	if (body == player):
@@ -117,6 +119,7 @@ func _on_button_pressed() -> void:
 	await(get_tree().create_timer(2).timeout);
 	player.can_move = true;
 	exit.blocked = false;
+	hagdnadfsa_player.play();
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rutqx"]
@@ -287,6 +290,11 @@ position = Vector2(-20, -21)
 [node name="button" parent="." unique_id=1558736944 instance=ExtResource("7_o37r7")]
 show_behind_parent = true
 position = Vector2(232, 8)
+
+[node name="hagdnadfsa player" type="AudioStreamPlayer2D" parent="." unique_id=493288265]
+position = Vector2(261, 6)
+stream = ExtResource("8_mpexw")
+max_distance = 4096.0
 
 [connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
 [connection signal="pressed" from="button" to="." method="_on_button_pressed"]
