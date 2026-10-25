@@ -13,6 +13,6 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if (body == player):
 		if (blocked == false):
-			Transition.transition(Transition.MAP_2);
+			Transition.transition(Transition.MAP_6);
 			await(get_tree().create_timer(0.1).timeout);
 			player.can_move = false;

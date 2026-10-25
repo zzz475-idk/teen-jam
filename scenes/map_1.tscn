@@ -126,9 +126,6 @@ script = ExtResource("2_0dnla")
 [node name="exit" parent="." unique_id=1970883660 instance=ExtResource("4_00lji")]
 position = Vector2(40, 16)
 
-[node name="player" parent="." unique_id=1070567530 instance=ExtResource("2_7xies")]
-position = Vector2(5, 9)
-
 [node name="Controlls" type="Sprite2D" parent="." unique_id=1819727666]
 position = Vector2(-8, -8)
 texture = ExtResource("4_0dnla")
@@ -143,6 +140,9 @@ text = "<- controls"
 label_settings = SubResource("LabelSettings_g4v7s")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="player" parent="." unique_id=1070567530 instance=ExtResource("2_7xies")]
+position = Vector2(5, 9)
 
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
 [connection signal="body_entered" from="exit" to="exit" method="_on_body_entered"]

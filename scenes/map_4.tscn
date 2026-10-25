@@ -92,6 +92,16 @@ texture = ExtResource("1_o37r7")
 11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:8/0 = 0
 10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:4/0 = 0
+10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:4/0 = 0
+11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_g4v7s"]
 physics_layer_0/collision_layer = 1
@@ -181,6 +191,8 @@ texture = ExtResource("1_o37r7")
 9:8/0 = 0
 10:8/0 = 0
 11:8/0 = 0
+7:1/0 = 0
+7:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yf5fn"]
 sources/0 = SubResource("TileSetAtlasSource_rutqx")
@@ -320,7 +332,6 @@ position = Vector2(232, 8)
 [node name="hagdnadfsa player" type="AudioStreamPlayer2D" parent="." unique_id=493288265]
 position = Vector2(261, 6)
 stream = ExtResource("8_mpexw")
-max_distance = 4096.0
 
 [connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

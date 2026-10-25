@@ -41,7 +41,7 @@ size = Vector2(47.999992, 14.999996)
 [node name="platformer transporter" type="AnimatedSprite2D" unique_id=982243366]
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 autoplay = "default"
-frame_progress = 0.87044346
+frame_progress = 0.6814625
 script = ExtResource("2_344tk")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1578412413]
@@ -52,7 +52,7 @@ position = Vector2(-8, -27)
 rotation = -0.24497867
 rotates = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D" unique_id=1481609572]
+[node name="StaticBody2D" type="StaticBody2D" parent="Path2D/PathFollow2D" unique_id=1004930541]
 position = Vector2(1.2126784, 28.134134)
 rotation = 0.24497867
 scale = Vector2(1.0000001, 1.0000001)

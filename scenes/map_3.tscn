@@ -81,12 +81,25 @@ texture = ExtResource("1_vtpsr")
 1:3/0 = 0
 2:3/0 = 0
 10:7/0 = 0
+10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:6/0 = 0
 10:5/0 = 0
 11:5/0 = 0
 11:6/0 = 0
 11:7/0 = 0
+11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:8/0 = 0
+10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:4/0 = 0
+10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:4/0 = 0
+11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_g4v7s"]
 physics_layer_0/collision_layer = 1
@@ -96,6 +109,7 @@ sources/0 = SubResource("TileSetAtlasSource_5kldx")
 script/source = "extends TileMapLayer
 
 @onready var player: CharacterBody2D = $player;
+@onready var exits: Node2D = $exits;
 
 func _on_spikes_area_body_entered(body: Node2D) -> void:
 	if (body == player):
@@ -106,6 +120,10 @@ func _on_exit_body_entered(body: Node2D) -> void:
 	if (body == player):
 		Transition.transition(Transition.MAP_4);
 		player.can_move = false;
+
+
+func _on_button_pressed() -> void:
+	exits.blocked = false;
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rutqx"]
@@ -163,6 +181,8 @@ texture = ExtResource("1_vtpsr")
 9:8/0 = 0
 10:8/0 = 0
 11:8/0 = 0
+7:1/0 = 0
+7:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yf5fn"]
 sources/0 = SubResource("TileSetAtlasSource_rutqx")
@@ -182,7 +202,7 @@ shader_parameter/offset = Vector2(0, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1, 230)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtpsr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryx0p"]
 size = Vector2(32, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0a7yh"]
@@ -260,7 +280,7 @@ shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spikes area" unique_id=1471912932]
 position = Vector2(64, 72)
-shape = SubResource("RectangleShape2D_vtpsr")
+shape = SubResource("RectangleShape2D_ryx0p")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="spikes area" unique_id=417811182]
 position = Vector2(120, 72)

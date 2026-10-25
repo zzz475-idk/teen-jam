@@ -14,7 +14,7 @@ script/source = "extends CanvasLayer
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN);
 	await(get_tree().create_timer(5).timeout);
-	label.text = \"guide the little guy!\";
+	label.text = \"guide the little one!\";
 	animation_player.play(\"intro\")
 	await(get_tree().create_timer(3).timeout);
 	Transition.transition(Transition.MAIN_MENU);

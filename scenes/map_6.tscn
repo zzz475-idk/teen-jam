@@ -1,0 +1,317 @@
+[gd_scene format=4 uid="uid://db08f53r643vo"]
+
+[ext_resource type="Texture2D" uid="uid://bfasdjskb6560" path="res://sprites/tileset.png" id="1_wulgb"]
+[ext_resource type="Shader" uid="uid://50oomnnftul3" path="res://shaders/main_menu_scrolling.gdshader" id="2_xkdms"]
+[ext_resource type="Texture2D" uid="uid://bi7o7gd2fympm" path="res://sprites/background 2.png" id="3_o0bkn"]
+[ext_resource type="Texture2D" uid="uid://cab4wq5oolsca" path="res://sprites/background.png" id="4_ai184"]
+[ext_resource type="PackedScene" uid="uid://dgu61lyyq8qqk" path="res://scenes/exit.tscn" id="5_7g08o"]
+[ext_resource type="PackedScene" uid="uid://do8d8ctxfyora" path="res://scenes/player.tscn" id="6_w8t5o"]
+[ext_resource type="PackedScene" uid="uid://dubvxf3qlu6lr" path="res://scenes/platformer_transporter.tscn" id="6_wulgb"]
+[ext_resource type="PackedScene" uid="uid://b82m8d870j342" path="res://scenes/button.tscn" id="7_xkdms"]
+[ext_resource type="AudioStream" uid="uid://bprdxoepb4qxo" path="res://sounds/el sonembro gabro.wav" id="9_ai184"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kldx"]
+texture = ExtResource("1_wulgb")
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:6/0 = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:6/0 = 0
+4:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:7/0 = 0
+9:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:8/0 = 0
+0:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:8/0 = 0
+1:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:8/0 = 0
+2:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:8/0 = 0
+3:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:8/0 = 0
+8:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:8/0 = 0
+9:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+10:7/0 = 0
+10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:6/0 = 0
+10:5/0 = 0
+11:5/0 = 0
+11:6/0 = 0
+11:7/0 = 0
+11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:8/0 = 0
+10:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:4/0 = 0
+10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:4/0 = 0
+11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g4v7s"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5kldx")
+
+[sub_resource type="GDScript" id="GDScript_ryx0p"]
+script/source = "extends TileMapLayer
+
+@onready var player: CharacterBody2D = $player;
+@onready var hagdnadfsa_player: AudioStreamPlayer2D = $\"hagdnadfsa player\";
+@onready var exit: Area2D = $exit;
+@onready var exit_2: Area2D = $exit2;
+
+
+func _on_spikes_area_body_entered(body: Node2D) -> void:
+	if (body == player):
+		player.death();
+
+
+func _on_exit_body_entered(body: Node2D) -> void:
+	if (body == player):
+		Transition.transition(Transition.MAP_4);
+		player.can_move = false;
+
+
+func _on_button_pressed() -> void:
+	exit.blocked = false;
+	exit_2.blocked = false;
+	
+	player.camera_juice(1.1, 1.1, 1);
+	player.can_move = false;
+	player.velocity = Vector2(0, 0);
+	await(get_tree().create_timer(1).timeout);
+	player.can_move = true;
+	hagdnadfsa_player.play();
+"
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rutqx"]
+texture = ExtResource("1_wulgb")
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+0:8/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+8:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+7:1/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yf5fn"]
+sources/0 = SubResource("TileSetAtlasSource_rutqx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rutqx"]
+shader = ExtResource("2_xkdms")
+shader_parameter/motion = Vector2(4, 0)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ccs1r"]
+shader = ExtResource("2_xkdms")
+shader_parameter/motion = Vector2(5, 0)
+shader_parameter/scale = 1.0
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vtpsr"]
+size = Vector2(512, 16)
+
+[node name="map6" type="TileMapLayer" unique_id=359141262]
+tile_map_data = PackedByteArray("AAAEAAAAAAAEAAUAAEAFAP3/AAADAAUAAAAFAP7/AAAEAAYAABAFAP//AAAEAAcAABAFAAAAAAAGAAcAACAGAP3/AAAEAAUAAAAGAP7/AAAEAAYAAAAGAP//AAAEAAcAAAAGAAAAAAAGAAcAACAHAAAAAAAEAAUAAFAEAP//AAADAAUAAAAHAP//AAAEAAUAAAAEAAMAAAADAAUAAAAHAAMAAAAEAAUAAAAHAAQAAAAEAAUAACAEAAQAAAADAAUAACAFAAMAAAAGAAcAAAAGAAMAAAAGAAcAAAAFAAQAAAADAAYAACAGAAQAAAAEAAcAACAGAAUAAAAEAAYAAAAGAAYAAAAEAAYAAAAGAAcAAAAHAAcAAAAGAAgAAAAAAAcAAAAFAAUAAAAEAAYAABAFAAYAAAAEAAYAABAFAAcAAAAHAAcAAAAFAAgAAAAAAAcAAAAHAAYAAAAFAAYAAAAIAAYAAAAGAAYAAAAJAAYAAAAFAAYAAAAKAAYAAAAGAAYAAAALAAYAAAAFAAYAAAAMAAYAAAAGAAYAAAANAAYAAAAFAAYAAAAOAAYAAAAGAAYAAAAPAAYAAAAFAAYAAAAQAAYAAAAGAAYAAAARAAYAAAAFAAYAAAASAAYAAAAGAAYAAAADAAYAAAAFAAYAAAAEAAYAAAAGAAYAAAABAAYAAAAFAAYAAAACAAYAAAAGAAYAAAD//wYAAAAFAAYAAAAAAAYAAAAGAAYAAAD9/wYAAAAFAAYAAAD+/wYAAAAGAAYAAAD7/wYAAAAFAAYAAAD8/wYAAAAGAAYAAAD7/wcAAAAHAAcAAAD8/wcAAAAHAAcAAAD9/wcAAAAHAAcAAAD+/wcAAAAHAAcAAAD//wcAAAAHAAcAAAAAAAcAAAAHAAcAAAABAAcAAAAHAAcAAAACAAcAAAAHAAcAAAADAAcAAAAHAAcAAAAEAAcAAAAHAAcAAAAHAAcAAAAHAAcAAAAIAAcAAAAHAAcAAAAJAAcAAAAHAAcAAAAKAAcAAAAHAAcAAAALAAcAAAAHAAcAAAAMAAcAAAAHAAcAAAANAAcAAAAHAAcAAAAOAAcAAAAHAAcAAAAPAAcAAAAHAAcAAAAQAAcAAAAHAAcAAAARAAcAAAAHAAcAAAASAAcAAAAHAAcAAAD7/wgAAAAAAAcAAAD8/wgAAAAAAAcAAAD9/wgAAAAAAAcAAAD+/wgAAAAAAAcAAAD//wgAAAAAAAcAAAAAAAgAAAAAAAcAAAABAAgAAAAAAAcAAAACAAgAAAAAAAcAAAADAAgAAAAAAAcAAAAEAAgAAAAAAAcAAAAHAAgAAAAAAAcAAAAIAAgAAAAAAAcAAAAJAAgAAAAAAAcAAAAKAAgAAAAAAAcAAAALAAgAAAAAAAcAAAAMAAgAAAAAAAcAAAANAAgAAAAAAAcAAAAOAAgAAAAAAAcAAAAPAAgAAAAAAAcAAAAQAAgAAAAAAAcAAAARAAgAAAAAAAcAAAASAAgAAAAAAAcAAAATAAYAAAAFAAYAAAAUAAYAAAAGAAYAAAAVAAYAAAAFAAYAAAAWAAYAAAAGAAYAAAD5/wYAAAAFAAYAAAD6/wYAAAAGAAYAAAD3/wYAAAAFAAYAAAD4/wYAAAAGAAYAAAD3/wcAAAADAAUAAAAWAAcAAAAEAAUAAAATAAcAAAAFAAcAAAAUAAcAAAAFAAcAAAAVAAcAAAAFAAcAAAD6/wcAAAAFAAcAAAD5/wcAAAAFAAcAAAD4/wcAAAAFAAcAAAD3/wgAAAAEAAYAABAWAAgAAAAEAAYAAAAVAAgAAAAAAAcAAAAUAAgAAAAAAAcAAAATAAgAAAAAAAcAAAD6/wgAAAAAAAcAAAD5/wgAAAAAAAcAAAD4/wgAAAAAAAcAAAAFAPf/AAADAAYAAAAGAPf/AAAEAAcAAAAHAPf/AAAEAAUAAAAEAPf/AAAEAAUAABAGAPj/AAAHAAcAACAFAPj/AAAHAAcAACAHAPj/AAAHAAcAACAEAPj/AAAHAAcAACAFAPT/AAADAAUAAAAGAPT/AAAEAAUAAAAGAPb/AAAEAAYAAAAGAPX/AAAEAAYAAAAFAPX/AAAEAAYAABAFAPb/AAAEAAYAABAKAP7/AAAJAAQAAAALAP7/AAAKAAQAAAAMAP7/AAALAAQAAAD///7/AAAJAAQAAAAAAP7/AAAKAAQAAAABAP7/AAALAAQAAAAIAPj/AAALAAQAAAADAPj/AAAJAAQAAAA=")
+tile_set = SubResource("TileSet_g4v7s")
+script = SubResource("GDScript_ryx0p")
+
+[node name="enviroment" type="TileMapLayer" parent="." unique_id=751454941]
+tile_map_data = PackedByteArray("AAAFAAAAAAAAAAMAAAAFAAEAAAAAAAQAAAAFAAIAAAAAAAUAAAAGAAAAAAABAAMAAAAGAAEAAAABAAQAAAAGAAIAAAABAAUAAAAHAAAAAAACAAMAAAAHAAEAAAACAAQAAAAHAAIAAAACAAUAAAAIAAAAAAADAAMAAAAIAAEAAAADAAQAAAAEAAIAAAALAAYAAAAHAP7/AAALAAYAAAAEAP3/AAAKAAUAAAAEAP7/AAAKAAYAAAAEAPX/AAAKAAUAAAAEAPb/AAAKAAYAAAAHAPb/AAALAAYAAAAGAPz/AAALAAYAAAAFAPP/AAALAAYAABAGAPP/AAAGAAYAAAA=")
+tile_set = SubResource("TileSet_yf5fn")
+
+[node name="black" type="ColorRect" parent="." unique_id=809160809]
+show_behind_parent = true
+offset_left = -159.5
+offset_top = -264.0
+offset_right = 483.5
+offset_bottom = 103.0
+color = Color(0.17254902, 0.17254902, 0.16470589, 1)
+
+[node name="white" type="ColorRect" parent="." unique_id=1995116631]
+show_behind_parent = true
+offset_left = -159.5
+offset_top = 28.0
+offset_right = 483.5
+offset_bottom = 143.0
+color = Color(1, 0.9529412, 0.9529412, 1)
+
+[node name="background2" type="Parallax2D" parent="." unique_id=892572966]
+show_behind_parent = true
+scroll_scale = Vector2(1.02, 1)
+scroll_offset = Vector2(1, -20)
+
+[node name="background" type="TextureRect" parent="background2" unique_id=20824744]
+material = SubResource("ShaderMaterial_rutqx")
+offset_left = -157.0
+offset_top = -83.0
+offset_right = 483.0
+offset_bottom = 61.0
+texture = ExtResource("3_o0bkn")
+stretch_mode = 1
+
+[node name="background1" type="Parallax2D" parent="." unique_id=355446407]
+show_behind_parent = true
+scroll_scale = Vector2(1.07, 1)
+scroll_offset = Vector2(1.5, -20)
+
+[node name="background" type="TextureRect" parent="background1" unique_id=842725621]
+material = SubResource("ShaderMaterial_ccs1r")
+offset_left = -158.5
+offset_top = -82.0
+offset_right = 481.5
+offset_bottom = 62.0
+texture = ExtResource("4_ai184")
+stretch_mode = 1
+
+[node name="spikes area" type="Area2D" parent="." unique_id=953467822]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spikes area" unique_id=1471912932]
+position = Vector2(112, 104)
+shape = SubResource("RectangleShape2D_vtpsr")
+
+[node name="player" parent="." unique_id=1070567530 instance=ExtResource("6_w8t5o")]
+position = Vector2(96, 35)
+
+[node name="platformer transporter" parent="." unique_id=982243366 instance=ExtResource("6_wulgb")]
+position = Vector2(160, 40)
+scale = Vector2(-1, 1)
+speed = 0.4
+
+[node name="platformer transporter2" parent="." unique_id=883532078 instance=ExtResource("6_wulgb")]
+position = Vector2(32, 40)
+speed = 0.4
+
+[node name="platformer transporter3" parent="." unique_id=95942265 instance=ExtResource("6_wulgb")]
+position = Vector2(168, -80)
+scale = Vector2(-1, 1)
+speed = 0.5
+
+[node name="platformer transporter4" parent="." unique_id=1692898182 instance=ExtResource("6_wulgb")]
+position = Vector2(24, -80)
+speed = 0.5
+
+[node name="button" parent="." unique_id=1558736944 instance=ExtResource("7_xkdms")]
+show_behind_parent = true
+position = Vector2(96, -56)
+
+[node name="hagdnadfsa player" type="AudioStreamPlayer2D" parent="." unique_id=296402126]
+position = Vector2(96, -152)
+stream = ExtResource("9_ai184")
+max_distance = 4096.0
+
+[node name="exit" parent="." unique_id=1970883660 instance=ExtResource("5_7g08o")]
+position = Vector2(108, -160)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="exit2" parent="." unique_id=22072085 instance=ExtResource("5_7g08o")]
+position = Vector2(84, -160)
+
+[connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
