@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://5nnh8c72rc0w" path="res://sprites/exit blocker.png" id="3_c7mer"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(14, 28)
+size = Vector2(16, 28)
 
 [node name="exit" type="Area2D" unique_id=1970883660]
 script = ExtResource("1_l5n14")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=829964890]
-position = Vector2(1, 2)
+position = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=501751956]

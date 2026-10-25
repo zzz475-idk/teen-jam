@@ -227,7 +227,7 @@ script = ExtResource("1_qfm1y")
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"death"
-frame_progress = 0.9454617
+frame_progress = 0.35269085
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2111783949]
@@ -275,7 +275,7 @@ color = Color(0.17254902, 0.17254902, 0.16470589, 1)
 position = Vector2(87, 138)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 autoplay = "default"
-frame_progress = 0.17774265
+frame_progress = 0.2886119
 
 [node name="hp amount" type="Label" parent="ui/hearth" unique_id=548588387]
 material = SubResource("ShaderMaterial_ujl30")

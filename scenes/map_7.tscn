@@ -130,12 +130,6 @@ func _on_spikes_area_body_entered(body: Node2D) -> void:
 		player.death();
 
 
-func _on_exit_body_entered(body: Node2D) -> void:
-	if (body == player):
-		Transition.transition(Transition.MAP_4);
-		player.can_move = false;
-
-
 func _on_button_pressed() -> void:
 	exit.blocked = false;
 	
@@ -145,6 +139,18 @@ func _on_button_pressed() -> void:
 	await(get_tree().create_timer(1).timeout);
 	player.can_move = true;
 	hagdnadfsa_player.play();
+
+
+
+
+func _on_exit_body_entered(body: Node2D) -> void:
+	if (body == player):
+		if (exit.blocked == false):
+			player.can_move = false;
+			Transition.transition(Transition.ENDING);
+			MusicPlayer.down();
+			
+			
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rutqx"]
@@ -380,11 +386,6 @@ position = Vector2(96, -152)
 stream = ExtResource("9_o038p")
 max_distance = 4096.0
 
-[node name="exit" parent="." unique_id=1970883660 instance=ExtResource("10_b7t2c")]
-position = Vector2(-9, 161)
-rotation = 3.1415927
-scale = Vector2(-1, -1)
-
 [node name="fly" parent="." unique_id=767562028 instance=ExtResource("11_8kxo0")]
 position = Vector2(184, -16)
 
@@ -400,13 +401,18 @@ position = Vector2(32, 160)
 [node name="fly5" parent="." unique_id=1938401497 instance=ExtResource("11_8kxo0")]
 position = Vector2(408, 88)
 
+[node name="exit" parent="." unique_id=1970883660 instance=ExtResource("10_b7t2c")]
+position = Vector2(-8, 160)
+blocked = true
+
 [node name="particles" type="GPUParticles2D" parent="." unique_id=1610841324]
 show_behind_parent = true
 position = Vector2(-200, -186)
-amount = 224
+amount = 112
 lifetime = 12.0
 visibility_rect = Rect2(-100, -100, 800, 400)
 process_material = SubResource("ShaderMaterial_4tvjf")
 
 [connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
 [connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
