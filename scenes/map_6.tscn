@@ -134,7 +134,7 @@ func _on_spikes_area_body_entered(body: Node2D) -> void:
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	if (body == player):
-		Transition.transition(Transition.MAP_4);
+		Transition.transition(Transition.MAP_7);
 		player.can_move = false;
 
 
@@ -148,6 +148,12 @@ func _on_button_pressed() -> void:
 	await(get_tree().create_timer(1).timeout);
 	player.can_move = true;
 	hagdnadfsa_player.play();
+
+
+func _on_exit_2_body_entered(body: Node2D) -> void:
+	if (body == player):
+		Transition.transition(Transition.MAP_7);
+		player.can_move = false;
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rutqx"]
@@ -366,3 +372,5 @@ process_material = SubResource("ShaderMaterial_4tvjf")
 
 [connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
 [connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_entered" from="exit2" to="." method="_on_exit_2_body_entered"]
