@@ -3,10 +3,14 @@ extends CanvasLayer
 
 @onready var label: Label = $Label;
 @onready var animation_player: AnimationPlayer = $AnimationPlayer;
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D;
 
 
 func _ready() -> void:
 	MusicPlayer.stop();
+	await(get_tree().create_timer(2).timeout);
+	animation_player.play("music in");
+	audio_stream_player_2d.play();
 	
 	await(get_tree().create_timer(7).timeout);
 	label.text = "ever wondered about...";
@@ -45,8 +49,10 @@ func _ready() -> void:
 	label.text = "i hoped that...";
 	animation_player.play("ending");
 	await(get_tree().create_timer(4).timeout);
-	label.text = "he could made me win a game jam.";
+	label.text = "he could make me win a game jam.";
 	animation_player.play("ending");
 	await(get_tree().create_timer(7).timeout);
-	label.text = "i'm sorry!";
+	label.text = "i'm sorry...";
 	animation_player.play("ending");
+	await(get_tree().create_timer(5).timeout);
+	animation_player.play("true ending");
