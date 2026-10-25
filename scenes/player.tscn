@@ -331,11 +331,11 @@ max_distance = 4096.0
 
 [node name="dead player" type="AudioStreamPlayer2D" parent="." unique_id=1332209630]
 stream = ExtResource("29_dt7fs")
-volume_db = 4.0
 max_distance = 4096.0
 
 [node name="jump player" type="AudioStreamPlayer2D" parent="." unique_id=1948112464]
 stream = ExtResource("30_wqfne")
+volume_db = -2.0
 max_distance = 1028.0
 
 [connection signal="timeout" from="jump buffer timer" to="." method="_on_jump_buffer_timer_timeout"]
