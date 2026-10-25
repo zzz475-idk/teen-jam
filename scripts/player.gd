@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var hp_amount: Label = $"ui/hearth/hp amount";
 @onready var meow_player: AudioStreamPlayer2D = $"meow player";
 @onready var dead_player: AudioStreamPlayer2D = $"dead player";
+@onready var jump_player: AudioStreamPlayer2D = $"jump player";
 @export var speed: float = 8000;
 @export var jump_power: float = 9000;
 @export var falling_speed: float = 400;
@@ -88,11 +89,14 @@ func jumping(delta: float) -> void:
 		if (can_jump == true):
 			velocity.y = (-jump_power) * delta;
 			animation_player.play("jump");
+			jump_player.pitch_scale = randf_range(0.95, 1.05);
+			jump_player.play();
 
 func death() -> void:
 	if (dead == false):
 		dead = true;
 		
+		dead_player.pitch_scale = randf_range(0.95, 1.05);
 		dead_player.play();
 		MusicPlayer.volume_db = -2
 		

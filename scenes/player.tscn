@@ -28,6 +28,8 @@
 [ext_resource type="Script" uid="uid://ve5lytfldv0i" path="res://scripts/stopper.gd" id="26_31cv2"]
 [ext_resource type="AudioStream" uid="uid://cuodmquwwn8k0" path="res://sounds/meow.wav" id="26_ujl30"]
 [ext_resource type="Texture2D" uid="uid://d0eaan6afnua4" path="res://sprites/player/stopper/player stopper.png" id="27_pf23h"]
+[ext_resource type="AudioStream" uid="uid://di61dyfcmooto" path="res://sounds/dead.wav" id="29_dt7fs"]
+[ext_resource type="AudioStream" uid="uid://bn4lrep7gfby2" path="res://sounds/jump.wav" id="30_wqfne"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -328,7 +330,13 @@ volume_db = 3.0
 max_distance = 4096.0
 
 [node name="dead player" type="AudioStreamPlayer2D" parent="." unique_id=1332209630]
+stream = ExtResource("29_dt7fs")
+volume_db = 4.0
 max_distance = 4096.0
+
+[node name="jump player" type="AudioStreamPlayer2D" parent="." unique_id=1948112464]
+stream = ExtResource("30_wqfne")
+max_distance = 1028.0
 
 [connection signal="timeout" from="jump buffer timer" to="." method="_on_jump_buffer_timer_timeout"]
 [connection signal="timeout" from="ui/stopper/Timer" to="ui/stopper" method="_on_timer_timeout"]
