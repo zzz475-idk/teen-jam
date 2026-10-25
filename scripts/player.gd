@@ -15,6 +15,7 @@ extends CharacterBody2D
 var can_move: bool = true;
 var can_jump: bool = true;
 var dead: bool = false;
+var pressing_jump: bool = false;
 
 func _ready() -> void:
 	MusicPlayer.volume_db = 0;
@@ -31,6 +32,7 @@ func _physics_process(delta: float) -> void:
 	hp_amount.text = str(GlobalVariables.hp) + 'x';
 	if (Input.is_action_just_pressed("x")):
 		meow_player.play();
+		meow_player.pitch_scale = randf_range(0.95, 1.05);
 	
 func movement(delta: float) -> void:
 	move_and_slide();

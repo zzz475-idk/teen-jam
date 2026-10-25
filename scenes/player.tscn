@@ -209,7 +209,7 @@ script = ExtResource("1_qfm1y")
 position = Vector2(0, 4)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"death"
-frame_progress = 0.29676214
+frame_progress = 0.2457433
 offset = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2111783949]
@@ -234,7 +234,7 @@ one_shot = true
 libraries/ = SubResource("AnimationLibrary_4r5pv")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=896872917]
-target_position = Vector2(0, 16)
+target_position = Vector2(0, 17)
 
 [node name="ui" type="CanvasLayer" parent="." unique_id=1502294195]
 layer = 0
@@ -257,7 +257,7 @@ color = Color(0.17254902, 0.17254902, 0.16470589, 1)
 position = Vector2(104, 138)
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 autoplay = "default"
-frame_progress = 0.20393561
+frame_progress = 0.62773156
 
 [node name="hp amount" type="Label" parent="ui/hearth" unique_id=548588387]
 material = SubResource("ShaderMaterial_ujl30")

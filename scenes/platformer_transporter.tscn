@@ -41,7 +41,7 @@ size = Vector2(47.999992, 14.999996)
 [node name="platformer transporter" type="AnimatedSprite2D" unique_id=982243366]
 sprite_frames = SubResource("SpriteFrames_yf5fn")
 autoplay = "default"
-frame_progress = 0.6814625
+frame_progress = 0.01533905
 script = ExtResource("2_344tk")
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1578412413]
