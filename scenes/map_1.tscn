@@ -85,6 +85,27 @@ texture = ExtResource("1_87ub3")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_7xies")
 
+[sub_resource type="GDScript" id="GDScript_nfx0i"]
+script/source = "extends Area2D
+
+@onready var player: CharacterBody2D = $\"../player\";
+@onready var exit_blocker: Sprite2D = $ExitBlocker;
+@export var blocked: bool = false;
+
+func _physics_process(delta: float) -> void:
+	if (blocked == true):
+		exit_blocker.visible = true;
+	else:
+		exit_blocker.visible = false;
+
+func _on_body_entered(body: Node2D) -> void:
+	if (body == player):
+		if (blocked == false):
+			Transition.transition(Transition.MAP_2);
+			await(get_tree().create_timer(0.1).timeout);
+			player.can_move = false;
+"
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yf5fn"]
 shader = ExtResource("6_nfx0i")
 shader_parameter/jitter_strength = 1.0000000475
@@ -125,6 +146,7 @@ script = ExtResource("2_0dnla")
 
 [node name="exit" parent="." unique_id=1970883660 instance=ExtResource("4_00lji")]
 position = Vector2(40, 16)
+script = SubResource("GDScript_nfx0i")
 
 [node name="Controlls" type="Sprite2D" parent="." unique_id=1819727666]
 position = Vector2(-8, -8)

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ct6mbswbkjbu0" path="res://sprites/exit.png" id="7_upn08"]
 [ext_resource type="AudioStream" uid="uid://bprdxoepb4qxo" path="res://sounds/el sonembro gabro.wav" id="8_mn8wt"]
 [ext_resource type="PackedScene" uid="uid://dubvxf3qlu6lr" path="res://scenes/platformer_transporter.tscn" id="9_eg1we"]
+[ext_resource type="PackedScene" uid="uid://bjqbeh818byfb" path="res://scenes/fly.tscn" id="11_5flaq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kldx"]
 texture = ExtResource("1_hu4dh")
@@ -337,6 +338,24 @@ position = Vector2(711, 9)
 [node name="button2" parent="." unique_id=2044505317 instance=ExtResource("7_602if")]
 show_behind_parent = true
 position = Vector2(777, 9)
+
+[node name="fly" parent="." unique_id=767562028 instance=ExtResource("11_5flaq")]
+position = Vector2(238, 15)
+
+[node name="fly2" parent="." unique_id=1194764403 instance=ExtResource("11_5flaq")]
+position = Vector2(416, -9)
+
+[node name="fly3" parent="." unique_id=1575346516 instance=ExtResource("11_5flaq")]
+position = Vector2(6, -12)
+
+[node name="fly4" parent="." unique_id=1955373117 instance=ExtResource("11_5flaq")]
+position = Vector2(-33, -313)
+
+[node name="fly5" parent="." unique_id=1435425467 instance=ExtResource("11_5flaq")]
+position = Vector2(804, 79)
+
+[node name="fly6" parent="." unique_id=347232969 instance=ExtResource("11_5flaq")]
+position = Vector2(657, 79)
 
 [connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://do8d8ctxfyora" path="res://scenes/player.tscn" id="3_lk7cf"]
 [ext_resource type="Shader" uid="uid://50oomnnftul3" path="res://shaders/main_menu_scrolling.gdshader" id="3_u6ti8"]
 [ext_resource type="PackedScene" uid="uid://dgu61lyyq8qqk" path="res://scenes/exit.tscn" id="7_rutqx"]
+[ext_resource type="PackedScene" uid="uid://bjqbeh818byfb" path="res://scenes/fly.tscn" id="8_ccs1r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kldx"]
 texture = ExtResource("1_jji5p")
@@ -249,6 +250,15 @@ position = Vector2(293, 1)
 
 [node name="player" parent="." unique_id=1070567530 instance=ExtResource("3_lk7cf")]
 position = Vector2(-20, -21)
+
+[node name="fly" parent="." unique_id=767562028 instance=ExtResource("8_ccs1r")]
+position = Vector2(171, -31)
+
+[node name="fly2" parent="." unique_id=1593965158 instance=ExtResource("8_ccs1r")]
+position = Vector2(296, -49)
+
+[node name="fly3" parent="." unique_id=1280986504 instance=ExtResource("8_ccs1r")]
+position = Vector2(-38, -51)
 
 [connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://do8d8ctxfyora" path="res://scenes/player.tscn" id="7_hcsfy"]
 [ext_resource type="PackedScene" uid="uid://b82m8d870j342" path="res://scenes/button.tscn" id="7_o37r7"]
 [ext_resource type="AudioStream" uid="uid://bprdxoepb4qxo" path="res://sounds/el sonembro gabro.wav" id="8_mpexw"]
+[ext_resource type="PackedScene" uid="uid://bjqbeh818byfb" path="res://scenes/fly.tscn" id="9_08pjf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kldx"]
 texture = ExtResource("1_o37r7")
@@ -332,6 +333,15 @@ position = Vector2(232, 8)
 [node name="hagdnadfsa player" type="AudioStreamPlayer2D" parent="." unique_id=493288265]
 position = Vector2(261, 6)
 stream = ExtResource("8_mpexw")
+
+[node name="fly" parent="." unique_id=767562028 instance=ExtResource("9_08pjf")]
+position = Vector2(76, -3)
+
+[node name="fly2" parent="." unique_id=1006133658 instance=ExtResource("9_08pjf")]
+position = Vector2(256, -3)
+
+[node name="fly3" parent="." unique_id=999410488 instance=ExtResource("9_08pjf")]
+position = Vector2(-59, -32)
 
 [connection signal="body_entered" from="spikes area" to="." method="_on_spikes_area_body_entered"]
 [connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
